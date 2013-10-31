@@ -1,0 +1,13 @@
+<h3><%= @video_game.title %></h3>
+
+<ul>
+	<li>Release Year: <%= @video_game.release_year %></li>
+	<li>Genre: <%= @video_game.genre %></li>
+	<li>Bio: <%= @video_game.bio %></li>
+	<li>Created By: <%= link_to @video_game.company.name, company_path(@video_game.company) %></li>
+	<li>
+		<% @video_game.characters.each do |char| %>
+			<p><%= link_to char.name, character_path(char) %></p>
+		<% end %>
+	</li>
+</ul>

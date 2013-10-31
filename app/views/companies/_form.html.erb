@@ -1,0 +1,10 @@
+<!-- Create form partial -->
+<%= form_for company do |f| %>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	<div>
+		<%= f.submit 'Save This Company' %>
+	</div>
+<% end %>

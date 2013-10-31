@@ -1,0 +1,21 @@
+<h2> Video Game Companies </h2>
+<%= link_to 'Create New Company', new_company_path %>
+
+<table>
+	<thead>
+		<td>Name</td>
+		<td>Number of Games</td>
+		<td>Edit</td>
+		<td>Delete</td>
+	</thead>
+	<tbody>
+		<% @companies.each do |company| %>
+		<tr>
+			<td><%= link_to company.name, company_path(company) %></td>
+			<td><%= company.video_games.length %></td>
+			<td><%= link_to 'Edit', edit_company_path(company) %></td>
+			<td><%= link_to 'Delete', company_destroy_path(company), method: :post %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,24 @@
+<%= form_for video_game do |f| %>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<div>
+		<%= f.label :release_year %>
+		<%= f.number_field :release_year %>
+	</div>
+	<div>
+		<%= f.label :genre %>
+		<%= f.text_field :genre %>
+	</div>
+	<div>
+		<%= f.label :bio %>
+		<%= f.text_area :bio %>
+	</div>
+	<div>
+		<%= f.collection_select(:company_id, Company.all, :id, :name) %>
+	</div>
+	<div>
+		<%= f.submit 'Save This Game' %>
+	</div>
+<% end %>

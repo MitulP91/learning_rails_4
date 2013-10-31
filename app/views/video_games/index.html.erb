@@ -1,0 +1,22 @@
+<h2> Video Games </h2>
+<%= link_to 'Create New Game', new_video_game_path %>
+<table>
+	<thead>
+		<td>Title</td>
+		<td>Genre</td>
+		<td>Release Year</td>
+		<td>Edit</td>
+		<td>Delete</td>
+	</thead>
+	<tbody>
+		<% @video_games.each do |game| %>
+			<tr>
+				<td><%= link_to game.title, video_game_path(game) %></td>
+				<td><%= game.genre %></td>
+				<td><%= game.release_year %></td>
+				<td><%= link_to 'Edit', edit_video_game_path(game) %></td>
+				<td><%= link_to 'Delete', video_game_destroy_path(game), method: :post %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
